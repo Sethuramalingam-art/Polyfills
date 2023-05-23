@@ -1,6 +1,6 @@
 var a = new Promise((resolve, reject) => {
   setTimeout(() => {
-    reject("I am resolved first");
+    resolve("I am resolved first");
   }, 100);
 });
 var b = new Promise((resolve, reject) => {
@@ -14,6 +14,10 @@ var c = new Promise((resolve, reject) => {
   }, 150);
 });
 
+//Promise.any => resolve or reject doesnot matter resolve should return means reject is
+//in 1s and resolve in 2s means it should return resolve because it is any
+//Promise.race => it will return which is first if reject is faster than resolve means it shoul
+// return reject
 // Promise.any([a, b, c]).then((result) => {
 //   console.log(result);
 // });
